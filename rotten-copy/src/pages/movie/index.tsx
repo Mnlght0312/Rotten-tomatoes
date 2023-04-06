@@ -1,8 +1,7 @@
-import Movies from "@/component/Movies";
 import React from "react";
 
-const index = () => {
-  return <Movies />;
-};
-
+function index() {
+  const side = typeof window ? "client" : "server";
+  return <div>You're currently on the {side}-side.</div>;
+}
 export default index;

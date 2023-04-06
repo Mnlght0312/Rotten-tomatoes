@@ -41,22 +41,22 @@ export interface IMovie {
   };
 }
 
-const Movies = (): JSX.Element => {
-  const [movies, setMovies] = useState<Array<IMovie>>([]);
+const Movies = ({movies}:{movies: Array<IMovie>}): JSX.Element => {
+  // const [movies, setMovies] = useState<Array<IMovie>>([]);
 
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = () => {
-    axios
-      .get("http://localhost:8080/api/movie")
-      .then((res) => {
-        console.log(res.data.result);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+  // const getData = () => {
+  //   axios
+  //     .get("http://localhost:8080/api/movie")
+  //     .then((res) => {
+  //       console.log(res.data.result);
 
-        setMovies(res.data.result);
-      })
-      .catch((err) => console.log(err));
-  };
+  //       setMovies(res.data.result);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
   return (
     <>
       <div className="flex justify-between py-4">
